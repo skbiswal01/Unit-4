@@ -1,0 +1,29 @@
+show dbs
+
+use assignment
+
+db.createCollection("user")
+
+db.users.insert({"first_name":"satya","last_name":"mohanty","email":"satya@gmail.com","gender":"male","ip_address":"163","age":"21"})
+
+db.users.insertMany([{"first_name":"satya","last_name":"mohanty","email":"satya@gmail.com","gender":"male","ip_address":"163","age":"21"},{"first_name":"sunil","last_name":"biswal","email":"sunil@gmail.com","gender":"male","ip_address":"153","age":"21"},{"first_name":"ambuj","last_name":"kumar","email":"ambuj@gmail.com","gender":"male","ip_address":"183","age":"21"},{"first_name":"rakesh","last_name":"bal","email":"rakesh@gmail.com","gender":"male","ip_address":"193","age":"21"},{"first_name":"satya","last_name":"mohanty","email":"satya@gmail.com","gender":"male","ip_address":"113","age":"21"},{"first_name":"ambuj","last_name":"kumar","email":"ambuj@gmail.com","gender":"male","ip_address":"183","age":"21"},{"first_name":"rakesh","last_name":"bal","email":"rakesh@gmail.com","gender":"male","ip_address":"193","age":"21"},{"first_name":"satya","last_name":"mohanty","email":"satya@gmail.com","gender":"male","ip_address":"113","age":"21"}])
+
+db.users.find({}).pretty()
+
+db.users.findOne({})
+
+db.users.remove({"first_name":"manoj"})
+
+db.users.deleteOne({"first_name":"satya"})
+
+db.users.deleteMany({"first_name":"ambuj"})
+
+db.users.update({"first_name":"sunil"},{$set:{"age":"20"}})
+
+db.users.update({"first_name":"rakesh"},{$set:{"age":"22"}})
+
+db.users.updateMany({"first_name":"rakesh"},{$set:{"age":"22"}})
+
+db
+
+db.dropDatabase()
