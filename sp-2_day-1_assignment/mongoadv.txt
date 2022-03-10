@@ -1,0 +1,34 @@
+*1 find equal to movie name
+db.movie.find({"Movie_Name":{$eq : "Screwed"}},{"Movie_Name":1,"Production_year":1,"_id":0}).pretty()
+
+*2 find not equal to movie name
+db.movie.find({"Movie_Name":{$ne: "Screwed"}},{"Movie_Name":1,"Production_year":1,"_id":0}).pretty()
+
+*3 all movies greater than and greater than equal to a budget
+ db.movie.find({"Budget":{$gte : 15000}},{"Movie_Name":1,"Production_year":1,"_id":0}).pretty()
+
+ *4 all movies less than and less than equal to a budget
+  db.movie.find({"Budget":{$lte: 10000}},{"Movie_Name":1,"Production_year":1,"_id":0}).pretty()
+
+*5 all movies that are produced after 2000 with budget greater than 10000
+db.movie.find({$and : [{"Production_year":{$gte : 2000}},{"Budget":{$gt: 10000}}]},{"Movie_Name":1,"Production_year":1,"_id":0}).pretty()
+
+
+*6  all movies that are produced after 2000 or budget greater than 10000
+ db.movie.find({$or : [{"Production_year":{$gte : 2000}},{"Budget":{$gt: 10000}}]},{"Movie_Name":1,"Production_year":1,"_id":0}).pretty()
+
+*7 all movies that are neither produced after 2000 nor with budget greater than 10000.
+ db.movie.find({$nor : [{"Production_year":{$gte : 2000}},{"Budget":{$gt: 10000}}]},{"Movie_Name":1,"Production_year":1,"_id":0}).pretty()
+
+*8 all movies that are not produced in 2000 or they do not have budget of 10000
+db.movie.find({$nor : [{"Production_year":2000},{"Budget":10000}]},{"Movie_Name":1,"Production_year":1,"_id":0}).pretty()
+
+*9 all movies that were produced from 2000 to 2010.
+db.movie.find({$and : [{"Production_year":{$gte : 2000}},{"Production_year":{$lte : 2010}}]},{"Movie_Name":1,"Production_year":1,"_id":0}).pretty()
+
+*10 
+ db.movie.find({"Movie_Name":1,"Production_year":1,"_id":0}).sort({"Production_year": -1}, {"Movie_Name": 1}).pretty()
+
+*11
+ db.movie.find().skip(10).limit(5).pretty()
+
