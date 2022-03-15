@@ -1,3 +1,4 @@
+const path = require("Path");
 const express = require("express");
 const app = express();
 const fixedaccount = require("../model/fixedaccount.model");
