@@ -52,6 +52,9 @@ router.post
     .not()
     .isEmpty()
     .withMessage("Pincode cannot be empty"),
+    body("Pincode")
+    .isNumeric()
+    .isLength({min : 6 , max : 6}),
     async(req, res) => {
         try{
             console.log(body("firstName"));
