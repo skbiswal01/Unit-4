@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const bookSchema = new mongoose.Schema({
+const commentSchema = new mongoose.Schema({
     body : {
         type : String,
         require : true,
@@ -16,5 +16,5 @@ const bookSchema = new mongoose.Schema({
  timestamps: true
 })
 
-const User = mongoose.model("user", userSchema)
+const User = mongoose.model("user", commentSchema)
 module.exports = User;

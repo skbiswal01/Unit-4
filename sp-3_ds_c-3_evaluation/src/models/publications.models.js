@@ -11,5 +11,5 @@ const publicationSchema = new mongoose.Schema({
  timestamps: true
 })
 
-const Publication = mongoose.model("publication", PublicationSchema)
+const Publication = mongoose.model("publication", publicationSchema)
 module.exports = Publication;
