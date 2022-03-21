@@ -16,5 +16,5 @@ const commentSchema = new mongoose.Schema({
  timestamps: true
 })
 
-const User = mongoose.model("user", commentSchema)
-module.exports = User;
+const Comment = mongoose.model("comment", commentSchema)
+module.exports = Comment;
