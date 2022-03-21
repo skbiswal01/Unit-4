@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const publicationSchema = new mongoose.model({
+const publicationSchema = new mongoose.Schema({
     Name : {
         type : Number,
         require : true,

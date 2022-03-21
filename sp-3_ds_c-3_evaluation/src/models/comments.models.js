@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const bookSchema = new mongoose.model({
+const bookSchema = new mongoose.Schema({
     body : {
         type : String,
         require : true,
